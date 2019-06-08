@@ -1,0 +1,30 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="student"
+		class="lean.spring.createobject_ioc.StudentService">
+		<constructor-arg value="Vaibhav" />
+		<constructor-arg value="Zodge" />
+	</bean>
+	
+	<bean id="studentWithDependencyInjected"
+		class="lean.spring.createobject_ioc.StudentService">
+		<constructor-arg ref="studentDetails" />
+	</bean>
+	
+	<bean id="studentDetails"
+		class="lean.spring.createobject_ioc.StudentDetails">
+		<constructor-arg value="Vaibhav Zodge" />
+		<constructor-arg value="Test Analyst" />
+	</bean>
+	
+	<bean id="teacherWithSetterMethod"
+		class="lean.spring.createobject_ioc.Teachers"/>
+		
+	<bean id="setterInjectionInTeacherClass"
+		class="lean.spring.createobject_ioc.Teachers">
+		<property name="teacherName" value="Gokhle Sir"/>
+		<property name="className" value="ETC"/>
+	</bean>
+	
+</beans>
