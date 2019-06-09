@@ -2,7 +2,7 @@ package lean.spring.createobject_ioc.usingAnnotation;
 
 import org.springframework.stereotype.Component;
 
-@Component("Student")
+@Component("StudentBean")
 public class Student {
 
 	public Student()
