@@ -1,6 +1,13 @@
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<context:property-placeholder location="classpath:resource/student-teacher.property"/>
 	<bean id="student"
 		class="lean.spring.createobject_ioc.StudentService">
 		<constructor-arg value="Vaibhav" />
@@ -26,5 +33,10 @@
 		<property name="teacherName" value="Gokhle Sir"/>
 		<property name="className" value="ETC"/>
 	</bean>
-	
+
+	<bean id="setterInjectionFromPropertiesFile"
+		class="lean.spring.createobject_ioc.Teachers">
+		<property name="teacherName" value="${teacherName}"/>
+		<property name="className" value="${class}"/>
+	</bean>	
 </beans>

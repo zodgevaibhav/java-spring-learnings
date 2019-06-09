@@ -23,6 +23,9 @@ public class StudentTest {
 		
 		System.out.println(context.getBean("setterInjectionInTeacherClass",Teachers.class).getClassName()); //Setter injection
 		System.out.println(context.getBean("setterInjectionInTeacherClass",Teachers.class).getTeacherName());//Setter injection
+
+		System.out.println(context.getBean("setterInjectionFromPropertiesFile",Teachers.class).getTeacherName());//Setter injection from properties file
+		
 		
 		context.close();
 
