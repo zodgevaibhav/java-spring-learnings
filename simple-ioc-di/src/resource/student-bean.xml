@@ -9,42 +9,42 @@
 
 <context:property-placeholder location="classpath:resource/student-teacher.property"/>
 	<bean id="student"
-		class="lean.spring.createobject_ioc.StudentService">
+		class="lean.spring.createobject_ioc.usingXml.StudentService">
 		<constructor-arg value="Vaibhav" />
 		<constructor-arg value="Zodge" />
 	</bean>
 	
 	<bean id="studentWithDependencyInjected"
-		class="lean.spring.createobject_ioc.StudentService">
+		class="lean.spring.createobject_ioc.usingXml.StudentService">
 		<constructor-arg ref="studentDetails" />
 	</bean>
 	
 	<bean id="studentDetails"
-		class="lean.spring.createobject_ioc.StudentDetails">
+		class="lean.spring.createobject_ioc.usingXml.StudentDetails">
 		<constructor-arg value="Vaibhav Zodge" />
 		<constructor-arg value="Test Analyst" />
 	</bean>
 	
 	<bean id="teacherWithSetterMethod"
-		class="lean.spring.createobject_ioc.Teachers"/>
+		class="lean.spring.createobject_ioc.usingXml.Teachers"/>
 		
 	<bean id="setterInjectionInTeacherClass"
-		class="lean.spring.createobject_ioc.Teachers">
+		class="lean.spring.createobject_ioc.usingXml.Teachers">
 		<property name="teacherName" value="Gokhle Sir"/>
 		<property name="className" value="ETC"/>
 	</bean>
 
 	<bean id="setterInjectionFromPropertiesFile"
-		class="lean.spring.createobject_ioc.Teachers">
+		class="lean.spring.createobject_ioc.usingXml.Teachers">
 		<property name="teacherName" value="${teacherName}"/>
 		<property name="className" value="${class}"/>
 	</bean>	
 
 	<bean id="StudentBeanWithPrototypeScope"
-		class="lean.spring.createobject_ioc.StudentBeanPrototypeScopeDemo" scope="prototype"/>
+		class="lean.spring.createobject_ioc.usingXml.StudentBeanPrototypeScopeDemo" scope="prototype"/>
 
 
 	<bean id="StudentBeanWithBeanInitDestroy"
-		class="lean.spring.createobject_ioc.StudentBeanPrototypeScopeDemo" init-method="beanInit" destroy-method="beanDestroy"/>
+		class="lean.spring.createobject_ioc.usingXml.StudentBeanPrototypeScopeDemo" init-method="beanInit" destroy-method="beanDestroy"/>
 
 </beans>
