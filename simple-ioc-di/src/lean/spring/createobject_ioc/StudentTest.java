@@ -26,6 +26,10 @@ public class StudentTest {
 
 		System.out.println(context.getBean("setterInjectionFromPropertiesFile",Teachers.class).getTeacherName());//Setter injection from properties file
 		
+		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 1
+		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 2
+		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 3
+
 		
 		context.close();
 

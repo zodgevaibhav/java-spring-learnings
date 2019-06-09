@@ -39,4 +39,8 @@
 		<property name="teacherName" value="${teacherName}"/>
 		<property name="className" value="${class}"/>
 	</bean>	
+
+	<bean id="StudentBeanWithPrototypeScope"
+		class="lean.spring.createobject_ioc.StudentBeanPrototypeScopeDemo" scope="prototype"/>
+
 </beans>
