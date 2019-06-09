@@ -29,9 +29,9 @@ public class StudentTest {
 		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 1
 		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 2
 		context.getBean("StudentBeanWithPrototypeScope",StudentBeanPrototypeScopeDemo.class); //prototype scope 3
-
 		
-		context.close();
+		context.getBean("StudentBeanWithBeanInitDestroy",StudentBeanPrototypeScopeDemo.class); //prototype scope 3
 
+		context.close();
 	}
 }
