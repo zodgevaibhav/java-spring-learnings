@@ -1,5 +1,7 @@
 package com.openvz.spring_learn.springlearn.controllers;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -36,10 +38,10 @@ public class RestController {
 		return env.getProperty("environment");
 	}
 	
-	@RequestMapping("/student/{id}")
-	public String getStudentId(@Value("id") String id)
+	@RequestMapping("/student")
+	public String getStudentId(@RequestParam String id)
 	{
-		return "Student id is - "+id;
+		return "Student id sent is  - "+id;
 	}
 
 }
