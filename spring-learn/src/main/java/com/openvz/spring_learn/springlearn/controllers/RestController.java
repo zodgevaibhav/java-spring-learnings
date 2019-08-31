@@ -1,12 +1,13 @@
 package com.openvz.spring_learn.springlearn.controllers;
 
-import javax.websocket.server.PathParam;
-
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.openvz.spring_learn.springlearn.services.StudentServiceImpl;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -21,15 +22,16 @@ public class RestController {
 	}
 	
 	@RequestMapping("/port")
-	public String getPort()
+	public JSONParser getPort()
 	{
-		return env.getProperty("server.port");
+		JSONParser jp = new JSONParser("{\"port\":\""+env.getProperty("server.port")+"\"}");
+		return jp;
 	}
 	
-	@RequestMapping("/name")
-	public String getName()
+	@GetMapping("/student/getSampleResponse")
+	public StudentServiceImpl  getName()
 	{
-		return env.getProperty("name");
+		return StudentServiceImpl.getSampleResponse();
 	}
 	
 	@RequestMapping("/env")
@@ -38,7 +40,7 @@ public class RestController {
 		return env.getProperty("environment");
 	}
 	
-	@RequestMapping("/student")
+	@RequestMapping("/student/id")
 	public String getStudentId(@RequestParam String id)
 	{
 		return "Student id sent is  - "+id;

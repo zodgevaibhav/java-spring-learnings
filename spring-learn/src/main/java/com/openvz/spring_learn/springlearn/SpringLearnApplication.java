@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 
-@PropertySource("custom.properties")
 @SpringBootApplication
 public class SpringLearnApplication {
 
