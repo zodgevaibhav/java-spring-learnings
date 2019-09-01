@@ -2,8 +2,6 @@ package com.openvz.spring_learn.springlearn;
 
 import org.junit.Before;
 import org.junit.Test;
-/*import org.junit.Before;
-import org.junit.Test;*/
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
