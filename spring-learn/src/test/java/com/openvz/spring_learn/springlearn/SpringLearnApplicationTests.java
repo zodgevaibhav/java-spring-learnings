@@ -2,6 +2,8 @@ package com.openvz.spring_learn.springlearn;
 
 import org.junit.Before;
 import org.junit.Test;
+/*import org.junit.Before;
+import org.junit.Test;*/
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
+
 
 import com.openvz.spring_learn.springlearn.services.StudentServiceImpl;
 
@@ -44,7 +47,7 @@ public class SpringLearnApplicationTests {
 		System.out.println(studentServiceImpl.getFirstName());
 		System.out.println(studentServiceImpl.getLastName());
 		System.out.println(studentServiceImpl.getStudentId());
-		System.out.println(studentServiceImpl.getSampleResponse());
+		System.out.println(StudentServiceImpl.getSampleResponse());
 	}
 
 }
