@@ -22,10 +22,9 @@ public class RestController {
 	}
 	
 	@RequestMapping("/port")
-	public JSONParser getPort()
+	public String getPort()
 	{
-		JSONParser jp = new JSONParser("{\"port\":\""+env.getProperty("server.port")+"\"}");
-		return jp;
+		return env.getProperty("server.port");
 	}
 	
 	@GetMapping("/student/getSampleResponse")
