@@ -31,3 +31,4 @@ build/
 .vscode/
 /bin/
 /log.txt
+/log.txt.2019-09-01.0.gz
